@@ -64,3 +64,12 @@ jobs:
     needs: 
       - installing_packages
       - running_script_from_code
+  deploy_on_production:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs:
+      - download_artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy on Production
+        run: | 
+          echo Running Production Deployment

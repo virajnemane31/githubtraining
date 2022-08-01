@@ -48,3 +48,8 @@ jobs:
           sudo apt-get install -y terraform
           terraform --version
           aws --version
+      - name: upload artifacts
+        uses: actions/upload-artifact@v2
+        with: 
+          name: artifact
+          path: data.txt

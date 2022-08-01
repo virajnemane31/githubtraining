@@ -53,3 +53,16 @@ jobs:
         with: 
           name: artifact
           path: data.txt
+  download_artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: download artfacts in different job
+        uses: actions/download-artifact@v2
+        with: 
+          name: artifact
+          path: ./
+      - name: read the artfacts file
+        run: cat data.txt
+    needs: 
+      - installing_packages
+      - running_script_from_code

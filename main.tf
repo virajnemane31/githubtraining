@@ -9,6 +9,6 @@ data "google_compute_disk" "demo31" {
     project = "kulbhushanmayer"
 }
 
-output "demo" {
+output "demo31" {
     value = data.google_compute_disk.demo31
 }
